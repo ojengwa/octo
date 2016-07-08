@@ -1,0 +1,16 @@
+application: filterbasis
+version: 2
+runtime: python27
+api_version: 1
+threadsafe: yes
+
+handlers:
+- url: /assets/
+  static_dir: public
+
+- url: /.*
+  script: main.application
+
+libraries:
+- name: MySQLdb
+  version: "latest"

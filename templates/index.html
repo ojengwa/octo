@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+<!-- Intro Header -->
+    <header class="intro">
+        <div class="intro-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <form name="domainForm" action="/" method="POST">
+                            <p class="intro-text">Get Free, unlimited SSL certificates for your website, instantly!</p>
+                                    <div class="alert alert-warning" data-ng-show="warn">
+                                        <span><b data-ng-bind="status">  </b> <span data-ng-bind="warn"></span></span>
+                                    </div>
+                                    <div class="alert alert-danger" data-ng-show="error">
+                                        <span><b data-ng-bind="status"></b> <span data-ng-bind="error"></span></span>
+                                    </div>
+                            <div class="input-group">
+                                <input type="text" class="form-control search" placeholder="Enter your domain name (eg: apipanda.com)" data-ng-model="domain" data-ng-disabled="disableBtn">
+                                <span class="input-group-btn">
+                                  <button class="btn btn-flat search" data-ng-disabled="disableBtn || !!!domain" type="submit"><span>Get Started</span><span data-ng-show="disableBtn"><i class="fa fa-spin fa-spinner" class="#fff"></i></span></button>
+                                </span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="container content-section">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2 class="text-center">About Openssl.io</h2>
+                <p><a href="https://github.com/apipanda/openssl" target="_blank"><code>OpenSSL.io</code></a> is a <a href="http://www.freeopensourcesoftware.org/index.php" target="_blank"><code>free and open source</code></a> <a href="https://letsencrypt.github.io/acme-spec/" target="_blank"><code>ACME Protocol</code></a> client for generating <strong>trusted</strong> <a href="https://en.wikipedia.org/wiki/Public_key_infrastructure" target="_blank"><code>WEB PKI Certificates</code></a> using the <a href="https://letsencrypt.org/" target="_blank"><code>Let's Encrypt certificate authority</code></a>. <a href="https://letsencrypt.org/about/" target="_blank"><code>Let’s Encrypt</code></a> is a free, automated, and open certificate authority (CA), run for the public’s benefit. </p>
+
+                <p><a href="https://letsencrypt.org/" target="_blank"><code>Let's Encrypt</code></a> is <strong>FREE:</strong> Anyone who owns a domain name can use Let’s Encrypt to obtain a trusted certificate at zero cost.</p>
+
+                <p><a href="https://letsencrypt.org/" target="_blank"><code>Let's Encrypt</code></a> is <strong>SECURE:</strong> Let’s Encrypt will serve as a platform for advancing TLS security best practices, both on the CA side and by helping site operators properly secure their servers.</p>
+
+                <p><a href="https://letsencrypt.org/" target="_blank"><code>Let's Encrypt</code></a> is <strong>TRANSPERANT:</strong> All certificates issued or revoked will be publicly recorded and available for anyone to inspect.</p>
+
+                <p><a href="https://letsencrypt.org/" target="_blank"><code>Let's Encrypt</code></a> is <strong>OPEN:</strong> The automatic issuance and renewal protocol will be published as an open standard that others can adopt.</p>
+
+                <p><a href="https://letsencrypt.org/" target="_blank"><code>Let's Encrypt</code></a> is <strong>COOPERATIVE:</strong> Much like the underlying Internet protocols themselves, Let’s Encrypt is a joint effort to benefit the community, beyond the control of any one organization.</p>
+
+                <p><strong>AUTO-RENEWAL:</strong> Your SSL certificates are auto-renewed for you so you don't have to worry about contantly keeping your <code>certificate</code>.</p>
+
+                <p><strong>MULTI-DOMAIN SETUP:</strong> We do not have any restrictions on the number of sub-domains to add.</p>
+
+                <p class="footer text-center"><code>Openssl.io</code> is <strong>NOT</strong> an affiliate of the <a href="https://www.openssl.org/" target="_blank" class="text-danger">OpenSSL Project</a>.</p>
+            </div>
+        </div>
+    </section>
+
+{% end %}
+{% block bottom %}
+     <footer class="page-footer">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Footer Content</h5>
+                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2014 Copyright Text
+            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+            </div>
+          </div>
+        </footer>
+
+{% end %}

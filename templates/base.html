@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>{{ handler.settings["site_title"] }}</title>
+    <link rel="stylesheet" href="/assets/libs/Materialize/dist/css/materialize.min.css" type="text/css">
+    <link rel="stylesheet" href="/assets/libs/font-awesome/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="/assets/css/main.css" type="text/css">
+    <link rel="alternate" href="/feed" type="application/atom+xml" title="{{ handler.settings["site_title"] }}">
+    {% block head %}{% end %}
+  </head>
+  <body>
+    <div class="content">
+      <nav>
+        <div class="nav-wrapper">
+          <a href="#" class="brand-logo">{{ handler.settings["site_title"] }}</a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li class="active"><a href="/">Home</a></li>
+            <li>
+              {% if not current_user %}
+                {% raw _('<a href="%(url)s">Sign in</a> to compose/edit') % {"url": escape(users.create_login_url(request.uri))} %}
+              {% else %}
+                {% if current_user.administrator %}
+                  <a href="/admin">{{ _("Entries") }}</a> -
+                {% end %}
+                <a href="{{ users.create_logout_url(request.uri) }}">{{ _("Sign out") }}</a>
+              {% end %}
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      {% block body %}{% end %}
+      {% block bottom %}{% end %}
+    </div>
+    <script src="/assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="/assets/libs/Materialize/dist/js/materialize.min.js"></script>
+    <script src="/assets/libs/d3/d3.min.js"></script>
+    <script src="/assets/libs/d3-cloud/build/d3.layout.cloud.js"></script>
+  </body>
+</html>

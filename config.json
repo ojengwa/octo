@@ -1,0 +1,14 @@
+{
+	"PROD": {
+		"XSRF_COOKIES": true,
+        "DEBUG": true,
+		"STATIC_PATH": "public",
+		"TEMPLATE_PATH": "templates",
+        "SECRET_KEY":"T6tomjTTQ3uK+yNBjfPjgGIBQ9MvlU6xsjlYZx+5v50=",
+		"DATABASE": {
+		}
+	},
+	"TEST": {
+
+	}
+}
